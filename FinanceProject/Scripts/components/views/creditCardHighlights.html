@@ -1,0 +1,40 @@
+﻿<style>
+    .img-responsive {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .product-display {
+        padding: 30px;
+        border-bottom: 1px solid #6195FF;
+    }
+
+    .right-side {
+        padding-top: 15px;
+    }
+</style>
+<div id="features" class="section sm-padding bg-grey">
+    <div class="container">
+        <div class="row product-display" ng-repeat="card in $ctrl.cardActiveList">
+            <div class="col-md-6">
+                <div class="section-header">
+                    <h2 class="title" style="margin-bottom: 0px;">{{card.name}}</h2>
+                </div>
+                <img class="img-responsive" src="../../../Content/img/CreditCard.jpeg" alt=""/>
+            </div>
+            <div class="col-md-6 right-side" >
+                <div class="feature">
+                    <i class="fa fa-check"></i>
+                    <p>Annual Fee: ${{card.annualFee}}</p>
+                </div>
+                <div class="feature" ng-show="card.bonusOffer">
+                    <i class="fa fa-check"></i>
+                    <p >Bonus Offer: {{card.bonusOffer}}</p>
+                </div>
+                <p>{{card.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

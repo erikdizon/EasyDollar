@@ -1,0 +1,105 @@
+﻿<header id="home">
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('../../../Content/img/Finance Background.jpg');">
+        <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+    <!-- Nav -->
+    <nav id="nav" class="navbar nav-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Collapse nav button -->
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+                <!-- /Collapse nav button -->
+            </div>
+            <!--  Main navigation  -->
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li><a href="/Home/Index">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#cards">Top Credit Cards</a>
+                    <ul class="dropdown">
+                        <li><a href="/CreditCards/TopCashBack">Cash Back</a></li>
+                        <li><a href="/CreditCards/TopTravel">Travel</a></li>
+                        <li><a href="/CreditCards/TopBalanceTransfer">Balance Transfer</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Product Highlights</a>
+                    <ul class="dropdown">
+                        <li><a href="/ProductHighlights/CreditCards">Credit Cards</a></li>
+                        <li><a href="/ProductHighlights/ProductManager">Product Manager</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Home/Login">Log In/Sign Up</a></li>
+            </ul>
+            <!-- /Main navigation -->
+        </div>
+    </nav>
+    <!-- /Nav -->
+    <!-- home wrapper -->
+    <div class="home-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- home content -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="home-content">
+                        <h1 class="white-text">Welcome to EasyDollar</h1>
+                        <p class="white-text">
+                            We outline and review popular financial products to help you take control of your money.
+                        </p>
+                        <button class="white-btn" onClick="document.getElementById('cards').scrollIntoView();">Top Credit Cards</button>
+                        <button class="main-btn" onclick="window.location.href='/ProductHighlights/CreditCards'">Product Highlights</button>
+                    </div>
+                </div>
+                <!-- /home content -->
+            </div>
+        </div>
+    </div>
+    <!-- /home wrapper -->
+</header>
+<!-- /Header -->
+<!-- Cards -->
+<div id="cards" class="section md-padding">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Best Credit Cards by Category</h2>
+            </div>
+            <!-- /Section header -->
+            <div class="col-md-4">
+                <div class="about">
+                    <i class="glyphicon glyphicon-usd"></i>
+                    <h3>Cash Back</h3>
+                    <p>Best for everyday purchases, earning straight cash, and simple redemptions.</p>
+                    <a href="/CreditCards/TopCashBack">See list</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="about">
+                    <i class="glyphicon glyphicon-plane"></i>
+                    <h3>Travel</h3>
+                    <p>Need a vacation?  These cards generate flexible travel points and miles that can be used for flights, hotels, and many other options.</p>
+                    <a href="/CreditCards/TopTravel">See list</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="about">
+                    <i class="glyphicon glyphicon-credit-card"></i>
+                    <h3>Balance Transfer</h3>
+                    <p>Don't pay more interest than you need to.  These cards will help you get back on track and pay off debt faster.</p>
+                    <a href="/CreditCards/TopBalanceTransfer">See list</a>
+                </div>
+            </div>
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Cards -->

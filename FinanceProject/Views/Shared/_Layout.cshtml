@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - EasyDollar</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="~/Content/Dragula/dragula.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/Content/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body ng-app="FinanceProject">
+
+    @RenderBody()
+
+    <hr />
+    <footer id="footer" class="sm-padding bg-dark">
+        <!-- footer copyright -->
+        <div class="footer-copyright">
+            <p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        </div>
+        <!-- /footer copyright -->
+    </footer>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/Dragula/angularjs-dragula.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/js/ui-bootstrap.js"></script>
+    <script src="~/Scripts/js/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/js/owl.carousel.min.js"></script>
+    <script src="~/Scripts/js/jquery.magnific-popup.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+    <script src="~/Services/Tools/apiRequestService.js"></script>
+    @RenderSection("scripts", false);
+
+</body>
+</html>

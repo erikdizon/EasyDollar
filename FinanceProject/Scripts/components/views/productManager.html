@@ -1,0 +1,126 @@
+﻿<style>
+    /*GENERAL TAB*/
+    .nav-tabs > li > a {
+        margin: 0px;
+        color: #676a6c;
+        border-radius: 8px 8px 0 0;
+        background-color: #e4e4e4;
+    }
+
+    .nav-tabs {
+        border-bottom: none;
+    }
+    
+    /*GENERAL TAB HOVER*/
+    .nav-tabs > li > a:hover {   
+        color: white;
+        background-color: #a7a7a7;
+    }
+
+    /*ACTIVE TAB*/
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        background-color: #1C1D21;
+        color: white;
+    }
+
+    .tabContainer {
+        background-color: white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .top {
+        padding-top: 15px;
+    }
+
+    .main-btn {
+        margin-bottom: 15px;
+    }
+
+    .has-error {
+        color: red;
+    }
+
+    .cardContainer {
+        padding: 30px;
+        border: 1px solid #6195FF;
+        border-radius: 10px;
+    }
+
+    .activeCardContainer {
+        padding: 30px;
+        border: 1px solid #6195FF;
+        cursor: move;
+        border-radius: 10px;
+    }
+
+    .left-padding {
+        padding-left: 15px;
+    }
+
+</style>
+
+<div class="section sm-padding bg-grey">
+    <div class="section-header text-center">
+        <h2 class="title">Product Manager</h2>
+    </div>
+    <div class="container">
+        <uib-tabset active="active">
+            <uib-tab index="1" heading="{{$ctrl.tabOne}} Product Post">
+                <div class="tabContainer">
+                    <form name="productForm">
+                        <div class="container">
+                            <div class="row">
+                                <div class="form-group col-md-9 top">
+                                    <input type="text" class="input" placeholder="Credit Card Name" name="name" required ng-model="$ctrl.creditCardModel.name">
+                                    <div class="has-error" ng-show="productForm.name.$invalid && productForm.name.$touched">This field is required</div>
+                                </div>
+                                <div class="form-group col-md-3 top">
+                                    <input type="number" class="input" placeholder="Annual Fee" name="annualFee" required ng-model="$ctrl.creditCardModel.annualFee">
+                                    <div class="has-error" ng-show="productForm.annualFee.$invalid && productForm.annualFee.$touched">This field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="input" placeholder="Bonus Offer" ng-model="$ctrl.creditCardModel.bonusOffer">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="input" placeholder="Product Highlights" name="description" required ng-model="$ctrl.creditCardModel.description"></textarea>
+                                <div class="has-error" ng-show="productForm.description.$invalid && productForm.description.$touched">This field is required</div>
+                            </div>
+                            <div class="form-group">
+                                <button class="main-btn pull-right" ng-disabled="productForm.$invalid" ng-hide="edit" ng-click="$ctrl.submit()">Submit</button>
+                                <button class="main-btn pull-right" ng-disabled="productForm.$invalid" ng-show="edit" ng-click="$ctrl.update()">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="Active/Displayed">
+                <div class="tabContainer">
+                    <h4 class="top left-padding">Drag to change order</h4>
+                    <div dragula="'cardBag'" dragula-model="$ctrl.cardActiveList">
+                        <div class="activeCardContainer" ng-repeat="card in $ctrl.cardActiveList">
+                            <div class="row">
+                                <strong>{{card.name}}</strong>  |  Annual Fee: ${{card.annualFee}}<a class="btn btn-link btn-md pull-right" style="color:#ed5565" title="Deactivate" ng-click="$ctrl.deactivate(card)"><i class="fa fa-times"></i></a>
+                                <a class="btn btn-link btn-md pull-right" title="Edit" style="float: right; color:#6195FF;"><i class="fa fa-pencil" ng-click="$ctrl.edit(card)"></i></a>
+                            </div>
+                            <div class="row" ng-show="card.bonusOffer">Bonus Offer: {{card.bonusOffer}}</div>
+                            <div class="row">Product Highlights: {{card.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="3" heading="Inactive">
+                <div class="tabContainer">
+                    <div class="cardContainer" ng-repeat="card in $ctrl.cardInactiveList">
+                        <div class="row"><strong>{{card.name}}</strong>  |  Annual Fee: ${{card.annualFee}}<a class="btn btn-link btn-md pull-right" style="color:#ed5565" title="Delete" ng-click="$ctrl.delete(card)"><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-link btn-md pull-right" title="Reactivate" style="float: right; color:#6195FF;"><i class="fa fa-reply" ng-click="$ctrl.reactivate(card)"></i></a></div>
+                        <div class="row" ng-show="card.bonusOffer">Bonus Offer: {{card.bonusOffer}}</div>
+                        <div class="row">Product Highlights: {{card.description}}</div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

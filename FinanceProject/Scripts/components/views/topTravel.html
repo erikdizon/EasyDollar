@@ -1,0 +1,29 @@
+﻿<style>
+    .img-responsive {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+</style>
+
+<div class="section sm-padding bg-grey">
+    <div class="section-header text-center">
+        <h2 class="title">Top Travel Credit Cards</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="card in $ctrl.travelList">
+                <div class="card">
+                    <div class="card-img">
+                        <img class="img-responsive" ng-src="\/{{card.cardImage}}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h3>{{card.cardHeading}}</h3>
+                        <p>{{card.cardTitle}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
